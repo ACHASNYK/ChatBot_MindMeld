@@ -1,4 +1,4 @@
-#!/home/ubuntu/workspace/bin/python
+#!/home/ubuntu/CB/bin/python
 
 import sys
 import getopt
