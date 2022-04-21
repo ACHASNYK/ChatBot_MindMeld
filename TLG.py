@@ -31,24 +31,15 @@ class TLG:
         self.conv = Conversation(nlp=self.nlp, app_path=app_path)
         self.logger = logging.getLogger(__name__)
 
-#	def send_message(chat_id, text):
-#            token = "5383369062:AAGTJHQMXZz9V03aAK4L-78Awt6jTYrdJHk" 
-#            method = "sendMessage"
-#            url = f"https://api.telegram.org/bot{token}/{method}"
-#            data = {"chat_id": chat_id, "text": text}
-#            requests.post(url, data=data)
-
         @self.app.route("/", methods=["GET", "POST"])
         def handle_message():  # pylint: disable=unused-variable
             token = "5383369062:AAGTJHQMXZz9V03aAK4L-78Awt6jTYrdJHk"
             metod = "sendMessage"
             url = f"https://api.telegram.org/bot{token}/{metod}"
-#            data = {"chat_id": chat_id, "text": response_text}
             if request.method == "POST":
                  incoming_msg = request.json["message"]["text"]
                  print(incoming_msg)
                  chat_id = request.json["message"]["chat"]["id"]
-#                 data = {"chat_id": chat_id, "text": response_text}
                  response_text = self.conv.say(incoming_msg)[0]
                  data = {"chat_id": chat_id, "text": response_text}
                  print(response_text)
