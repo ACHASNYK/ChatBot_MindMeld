@@ -1,15 +1,20 @@
 # ChatBot_MindMeld
-Its my Training project with Conversational AI chatbot - text intent recognition task
+Hi to everyone!
 
-Hi to everyone, this is a very interesting experience - to have a deep dive into Conversational AI framework MindMeld by Cisco. 
-My task was to build a model and train it to recognize and classify greeting and exit words in Ukrainian language.
-Also to build a bot to Telegram messenger - which will be able to provide and easy communicational channel to this facility.
-So far this project was accomplished successfully today - I did a little bonus - I have 2 domains trained instead of one.
-Now it can recognize greets in EN and UA languages accordignly.
-What about Telegram interface - I have used a simplified version for testing purposes only.
-However it works surprisignly well with MM interface.
+It was a test task to build a conversational chatbot for Telegram messenger based on the MindMeld ConversationalAI work frame by Cisco.
 
-To install and launch - please refer to MindMeld official documentation, setup guide etc.
+In particular, a chatbot is capable to recognize greets and exit words or phrases in 2 languages: English and Ukrainian. And after recognition answer greets and exits words in a related language. Chatbot to be linked with Telegram messenger.
 
-+ (beware of MM and its dependancy hard requirements - when it says 4G and 2 CPU - so let it be ))
+A basic dialog flow is to be designed, however, a work frame is capable to make a dialog much deeper and rich in accordance with the customer's request.
 
+Only 2 functions from build-in NLP pipeline was engaged: Domain Recognition and Intent Recognition. A train and test text files was created and a model was trained used logreg classificator and a bag-of-words.
+
+In order to accomplish this task, an instance was raised on AWS EC2 on UBUNTU 18 machine with 4Gb and 2 CPUs as a MindMeld and its dependencies (Elascticsearch) requirements.
+
+The project was built on Python3.6, Flask, and MindMeld. Elasticsearch, Telegram API, and other libraries.
+
+A simple but capable interface with Telegram was built with HTTP requests to telegram`s web API interface engaged Webhook, JSON created by Responses library.
+
+This project can be run on-line on-demand to test it - please send me a request via Telegram or WhatsUp, since an instance on EC2 engaged is not on the free-tier of billing )).
+
+P.S. (Should you decide to install this project on remote instance - make sure you meet the hardware requirements of Elasticsearch)
