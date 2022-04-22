@@ -5,7 +5,7 @@ It was a test task to build a conversational chatbot for Telegram messenger base
 
 In particular, a chatbot is capable to recognize greets and exit words or phrases in 2 languages: English and Ukrainian. And after recognition answer greets and exits words in a related language. Chatbot to be linked with Telegram messenger.
 
-A basic dialog flow is to be designed, however, a work frame is capable to make a dialog much deeper and rich in accordance with the customer's request.
+A basic dialog flow is designed, however, a work frame is capable to make a dialog much deeper and rich in accordance with the customer's request.
 
 Only 2 functions from build-in NLP pipeline was engaged: Domain Recognition and Intent Recognition. A train and test text files was created and a model was trained used logreg classificator and a bag-of-words.
 
@@ -17,4 +17,6 @@ A simple but capable interface with Telegram was built with HTTP requests to tel
 
 This project can be run on-line on-demand to test it - please send me a request via Telegram or WhatsUp, since an instance on EC2 engaged is not on the free-tier of billing )).
 
-P.S. (Should you decide to install this project on remote instance - make sure you meet the hardware requirements of Elasticsearch)
+Should you decide to launch this project for your own purposes - please put in placeholder of variable "token" in TLG.py an appropriate value of your own Telegram bot token.
+
+P.S. Should you decide to install this project on remote instance - make sure you meet the hardware requirements of Elasticsearch.
