@@ -1,4 +1,4 @@
-#!/home/ubuntu/CB/bin/python
+#!/home/ubuntu/ChatBot_MindMeld/bin/python
 
 import sys
 import getopt

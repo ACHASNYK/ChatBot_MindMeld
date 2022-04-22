@@ -4,10 +4,13 @@ from mindmeld import Application
 #from . import custom_features  # noqa: F401
 
 app = Application(__name__)
-#app.config['JSON_AS_ASCII'] = False
+
 __all__ = ['app']
 
-
+@app.handle()
+def error(request, responder):
+    responder.reply(['Не можу зрозуміти, спробуйте ще раз'])
+    responder.listen()
 
 @app.handle(intent='greet_ua')
 def welcome(request, responder):
@@ -30,10 +33,6 @@ def say_goodbye_en(request, responder):
     responder.reply(['Bye!','Have a nice day!','Good bye!','Farewell','It was a pleasure!'])
     responder.listen()
 
-@app.handle(default=True)
-def default(request, responder):
-    
-    responder.reply('Аб чьом це ви? Вибачте я розумію поки що тільки українські і англійські привітання і прощання. Спробуйте ще раз пліз.')
-    responder.listen()
+
 
 
