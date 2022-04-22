@@ -22,7 +22,7 @@ class TLG:
               if None.
         """
         self.app = Flask(name)
-        self.app.config["JSON_AS_ASCII"] = False
+        self.app.config["JSON_AS_ASCII"] = False # this parameter is very important since in Flask JSON initiated encoding is ASCII by default, thus messages in UTF-8 will be trunkated
         if not nlp:
             self.nlp = NaturalLanguageProcessor(app_path)
             self.nlp.load()
@@ -33,7 +33,7 @@ class TLG:
 
         @self.app.route("/", methods=["GET", "POST"])
         def handle_message():  # pylint: disable=unused-variable
-            token = "5383369062:AAGTJHQMXZz9V03aAK4L-78Awt6jTYrdJHk"
+            token = "YOUR REAL TELEGRAM BOT TOKEN, please refer to the Telegram docs))"
             metod = "sendMessage"
             url = f"https://api.telegram.org/bot{token}/{metod}"
             if request.method == "POST":
@@ -43,7 +43,7 @@ class TLG:
                  response_text = self.conv.say(incoming_msg)[0]
                  data = {"chat_id": chat_id, "text": response_text}
                  print(response_text)
-                 requests.post(url, data=data)
+                 requests.post(url, data=data) 
             return {"ok": True}
 
     def run(self, host="localhost", port=7150):
